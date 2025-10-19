@@ -19,6 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/research" element={<Research />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<h1 className="text-center text-4xl mt-20">404 Not Found</h1>} />
       </Routes>
     </Router>
   );
