@@ -1,5 +1,4 @@
 import GameOfLife from "../components/GameOfLife";
-import ParallaxImage from "../components/ParallaxImage";
 
 export default function Home() {
   return (
@@ -11,16 +10,6 @@ export default function Home() {
         style={{ zIndex: -1, pointerEvents: "none" }}
         cellSize={Math.max(8, Math.floor(window.innerWidth / 25))}
       />
-
-      {/*
-      <ParallaxImage
-        src="/stocks_img.png"
-        strength={10}
-        calmness={0.1}
-        positionX="15%"
-        positionY="60%"
-        width="100vw"
-      />*/}
 
 
       <style>{`
