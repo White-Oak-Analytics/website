@@ -4,10 +4,11 @@ import About from "./pages/About";
 import Research from "./pages/Research";
 import Contact from "./pages/Contact";
 
+
 function App() {
   return (
     <Router>
-      <nav className="flex justify-center gap-6 py-4 bg-white shadow-md">
+      <nav className="flex justify-center gap-6 py-4 bg-white shadow-md opacity-0">
         <Link to="/" className="text-gray-700 hover:text-black font-medium">Home</Link>
         <Link to="/about" className="text-gray-700 hover:text-black font-medium">About</Link>
         <Link to="/research" className="text-gray-700 hover:text-black font-medium">Research</Link>
