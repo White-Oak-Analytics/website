@@ -8,19 +8,19 @@ export default function Home() {
         background="#FCFCF8"
         fillRGB="242,242,240"
         aliveAlpha={1}
-        // Keep the GOL behind *everything* and non-interactive
         style={{ zIndex: -1, pointerEvents: "none" }}
         cellSize={Math.max(8, Math.floor(window.innerWidth / 25))}
       />
 
+      {/*
       <ParallaxImage
         src="/stocks_img.png"
-        strength={20}
+        strength={10}
         calmness={0.1}
         positionX="15%"
         positionY="60%"
         width="100vw"
-      />
+      />*/}
 
 
       <style>{`
@@ -309,16 +309,19 @@ export default function Home() {
       <div className="box yellow"></div>
 
       <div className="yellow-content">
-        <div className="glass-container">
-          <div className="logo-container">
-            <img src="/WOA_logo.svg" alt="WOA Logo" />
+        <a href="/" className="logo-link" style={{ textDecoration: "none" }}>
+          <div className="glass-container">
+            <div className="logo-container">
+              <img src="/WOA_logo.svg" alt="WOA Logo" />
+            </div>
+            <div className="text-container">
+              <h1 className="white-oak-text">WHITE OAK</h1>
+              <p className="analytics-text">Analytics .</p>
+            </div>
           </div>
-          <div className="text-container">
-            <h1 className="white-oak-text">WHITE OAK</h1>
-            <p className="analytics-text">Analytics .</p>
-          </div>
-        </div>
+        </a>
       </div>
+
 
       <div className="green-content">
         <p className="green-text">
