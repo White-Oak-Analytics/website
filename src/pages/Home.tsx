@@ -1,18 +1,29 @@
 import GameOfLife from "../components/GameOfLife";
+import ParallaxImage from "../components/ParallaxImage";
 
 export default function Home() {
-    return (
-        <div className="page">
-            <GameOfLife
-                background="#FCFCF8"
-                fillRGB="242,242,240"
-                aliveAlpha={1}
-                // Keep the GOL behind *everything* and non-interactive
-                style={{ zIndex: -1, pointerEvents: "none" }}
-                cellSize={Math.max(8, Math.floor(window.innerWidth / 25))}
-            />
+  return (
+    <div className="page">
+      <GameOfLife
+        background="#FCFCF8"
+        fillRGB="242,242,240"
+        aliveAlpha={1}
+        // Keep the GOL behind *everything* and non-interactive
+        style={{ zIndex: -1, pointerEvents: "none" }}
+        cellSize={Math.max(8, Math.floor(window.innerWidth / 25))}
+      />
 
-            <style>{`
+      <ParallaxImage
+        src="/stocks_img.png"
+        strength={20}
+        calmness={0.1}
+        positionX="15%"
+        positionY="60%"
+        width="100vw"
+      />
+
+
+      <style>{`
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
@@ -292,57 +303,57 @@ export default function Home() {
         
       `}</style>
 
-            <div className="box red"></div>
-            <div className="box blue"></div>
-            <div className="box green"></div>
-            <div className="box yellow"></div>
+      <div className="box red"></div>
+      <div className="box blue"></div>
+      <div className="box green"></div>
+      <div className="box yellow"></div>
 
-            <div className="yellow-content">
-                <div className="glass-container">
-                    <div className="logo-container">
-                        <img src="/WOA_logo.svg" alt="WOA Logo" />
-                    </div>
-                    <div className="text-container">
-                        <h1 className="white-oak-text">WHITE OAK</h1>
-                        <p className="analytics-text">Analytics .</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="green-content">
-                <p className="green-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-            </div>
-
-            <div className="blue-content">
-                <div className="blue-links">
-                    <div className="blue-link-wrapper">
-                        <a href="/About" className="blue-link">About</a>
-                        <a href="/About" className="blue-temp-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
-                        </a>
-                    </div>
-                    <div className="blue-link-wrapper">
-                        <a href="/Research" className="blue-link">Research</a>
-                        <a href="/Research" className="blue-temp-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
-                        </a>
-                    </div>
-                    <div className="blue-link-wrapper">
-                        <a href="/Contact" className="blue-link">Contact</a>
-                        <a href="/Contact" className="blue-temp-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
-                        </a>
-                    </div>
-                </div>
-            </div>
+      <div className="yellow-content">
+        <div className="glass-container">
+          <div className="logo-container">
+            <img src="/WOA_logo.svg" alt="WOA Logo" />
+          </div>
+          <div className="text-container">
+            <h1 className="white-oak-text">WHITE OAK</h1>
+            <p className="analytics-text">Analytics .</p>
+          </div>
         </div>
-    );
+      </div>
+
+      <div className="green-content">
+        <p className="green-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+      </div>
+
+      <div className="blue-content">
+        <div className="blue-links">
+          <div className="blue-link-wrapper">
+            <a href="/About" className="blue-link">About</a>
+            <a href="/About" className="blue-temp-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+            </a>
+          </div>
+          <div className="blue-link-wrapper">
+            <a href="/Research" className="blue-link">Research</a>
+            <a href="/Research" className="blue-temp-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+            </a>
+          </div>
+          <div className="blue-link-wrapper">
+            <a href="/Contact" className="blue-link">Contact</a>
+            <a href="/Contact" className="blue-temp-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
