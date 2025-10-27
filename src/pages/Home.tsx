@@ -85,7 +85,7 @@ export default function Home() {
             width: calc(100vw * var(--invphi));
             height: calc(100vh * var(--comp));
             opacity: 1;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0.63vh 1.27vh rgba(0, 0, 0, 0.5);
           }
 
           .yellow-content {
@@ -100,7 +100,7 @@ export default function Home() {
             align-items: flex-start;
             z-index: 10;
             box-sizing: border-box;
-            overflow: hidden;
+            overflow: visible;
           }
 
           .yellow-links {
@@ -110,6 +110,7 @@ export default function Home() {
             gap: 3vw;
             margin-left: 4vw;
             position: relative;
+            overflow: visible;
           }
 
           .yellow-link-wrapper {
@@ -117,6 +118,7 @@ export default function Home() {
             text-align: left;
             display: flex;
             align-items: center;
+            overflow: visible;
           }
 
           .yellow-link {
@@ -127,18 +129,18 @@ export default function Home() {
             text-decoration: none;
             cursor: pointer;
             transition: opacity 0.2s ease, border-bottom 0.2s ease;
-            border-bottom: 3px solid transparent;
-            padding-bottom: 2px;
+            border-bottom: 0.47vh solid transparent;
+            padding-bottom: 0.32vh;
             display: inline-block;
             white-space: nowrap;
           }
 
           .yellow-link:hover {
-            border-bottom: 3px solid #BDB0D9;
+            border-bottom: 0.47vh solid #BDB0D9;
           }
 
           .yellow-link-wrapper:hover .yellow-link {
-            border-bottom: 3px solid #BDB0D9;
+            border-bottom: 0.47vh solid #BDB0D9;
           }
 
           .yellow-temp-text {
@@ -159,7 +161,7 @@ export default function Home() {
           }
 
           .yellow-link-wrapper:hover .yellow-temp-text {
-            max-width: 500px;
+            max-width: 39vw;
             opacity: 1;
             margin-left: 2vw;
             text-decoration: none;
@@ -172,7 +174,7 @@ export default function Home() {
             width: calc(100vw * var(--comp));
             height: calc(100vh * var(--comp));
             opacity: 1;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0.63vh 1.27vh rgba(0, 0, 0, 0.5);
           }
 
           .blue-content {
@@ -190,13 +192,13 @@ export default function Home() {
           .glass-container {
             display: flex;
             align-items: flex-end;
-            gap: 20px;
-            padding: 28px 28px 22px 28px;
-            border-radius: 10px;
+            gap: 1.56vw;
+            padding: 4.44vh 2.19vw 3.49vh 2.19vw;
+            border-radius: 0.78vw;
           }
 
           .logo-container img {
-            height: 75px;
+            height: 11.89vh;
             width: auto;
           }
 
@@ -208,35 +210,35 @@ export default function Home() {
 
           .white-oak-text {
             font-family: 'Inter', sans-serif;
-            font-size: 40px;
+            font-size: 6.34vh;
             font-weight: 900;
             color: #F2F2F0;
             line-height: 1;
-            margin: 0 0 4px 0;
-            letter-spacing: -2px;
-            word-spacing: 5px;
+            margin: 0 0 0.63vh 0;
+            letter-spacing: -0.16vw;
+            word-spacing: 0.39vw;
           }
 
           .analytics-text {
             font-family: 'Inter', sans-serif;
-            font-size: 20px;
+            font-size: 3.17vh;
             font-weight: 400;
             color: #F2F2F0;
             line-height: 1;
             margin: 0;
-            letter-spacing: -2px;
-            border-bottom: 3px solid #BDB0D9;
+            letter-spacing: -0.16vw;
+            border-bottom: 0.47vh solid #BDB0D9;
           }
 
           .divider-bar {
             position: absolute;
             /* Centered vertically within ONLY the blue/yellow band */
-            top: calc((100vh * var(--comp)) * 0.15); /* 15% of the band from the top */
-            left: calc(100vw * var(--invphi) - 3px); /* center a 6px bar on the seam */
-            width: 2px;
-            height: calc((100vh * var(--comp)) * 0.7); /* 70% of the band height */
-            background-color: #F2F2F0; /* off‑white, matches page bg */
-            border-radius: 1px;
+            top: calc((100vh * var(--comp)) * 0.15);
+            left: calc(100vw * var(--invphi) - 0.23vw);
+            width: 0.16vw;
+            height: calc((100vh * var(--comp)) * 0.7);
+            background-color: #F2F2F0;
+            border-radius: 0.08vw;
             z-index: 5;
             pointer-events: none;
           }
@@ -245,16 +247,16 @@ export default function Home() {
             position: absolute;
             bottom: 0;
             left: 0;
-            padding: 3vw;           /* space from edges */
-            width: 46vw;            /* more horizontal */
-            max-width: 720px;       /* widen cap */
+            padding: 3vw;
+            width: 46vw;
+            max-width: 56.25vw;
             box-sizing: border-box;
             background: radial-gradient(
               circle at center,
-              rgba(242, 242, 240, 1) 0%,      /* center fully opaque */
+              rgba(242, 242, 240, 1) 0%,
               rgba(242, 242, 240, 0.85) 30%,
               rgba(242, 242, 240, 0.45) 60%,
-              rgba(242, 242, 240, 0.0) 100%    /* edges transparent */
+              rgba(242, 242, 240, 0.0) 100%
             );
             z-index: 5;
             display: flex;
@@ -319,7 +321,7 @@ export default function Home() {
       {/* Bottom-left paragraph with gradient */}
       <div className="bottom-left-gradient">
         <div className="bottom-left-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          We are a private research firm analyzing the frontier between mathematical theory and computational design. Our work explores systemic patterns within data, forming insight and structure from disorder.
         </div>
       </div>
 
@@ -328,19 +330,19 @@ export default function Home() {
           <div className="yellow-link-wrapper">
             <a href="/about" className="yellow-link">About</a>
             <a href="/about" className="yellow-temp-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              A brief on our origins, philosophy, and direction.
             </a>
           </div>
           <div className="yellow-link-wrapper">
             <a href="/research" className="yellow-link">Research</a>
             <a href="/research" className="yellow-temp-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              An overview of our ongoing studies and findings.
             </a>
           </div>
           <div className="yellow-link-wrapper">
             <a href="/contact" className="yellow-link">Contact</a>
             <a href="/contact" className="yellow-temp-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              Reach out for inquiries, collaborations, or opportunities.
             </a>
           </div>
         </div>
@@ -354,7 +356,7 @@ export default function Home() {
             </div>
             <div className="text-container">
               <h1 className="white-oak-text">WHITE OAK</h1>
-              <p className="analytics-text">Analytics .</p>
+              <p className="analytics-text">Analysis .</p>
             </div>
           </div>
         </a>
