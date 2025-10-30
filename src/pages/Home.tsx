@@ -44,6 +44,7 @@ export default function Home() {
           width: 100vw;
           height: 100vh;
           overflow: hidden;
+          /* Removed fallback background color */
         }
 
         /* Radial blur overlay */
@@ -68,7 +69,168 @@ export default function Home() {
           position: absolute;
         }
 
+        /* Mobile view: below 768px */
+        @media (max-width: 768px) {
+          .page {
+            background: #F2F2F0;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+          }
+
+          .box,
+          .divider-bar,
+          .bottom-left-gradient,
+          .yellow-content,
+          .blue-content {
+            display: none !important;
+          }
+
+          .radial-blur {
+            display: block !important;
+          }
+
+          /* Mobile Header - Using Silver Ratio */
+          .mobile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4vh 6vw 2vh 6vw;
+            background: #0C0C0C;
+            box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            height: calc(100vh * var(--comp));
+            box-sizing: border-box;
+          }
+
+          .mobile-logo-section {
+            display: flex;
+            align-items: flex-end;
+            gap: 3vw;
+            flex-shrink: 0;
+          }
+
+          .mobile-logo-section img {
+            height: 10vh;
+            width: auto;
+          }
+
+          .mobile-text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .mobile-white-oak-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 5.5vh;
+            font-weight: 900;
+            color: #F2F2F0;
+            line-height: 1;
+            margin: 0 0 0.5vh 0;
+            letter-spacing: -0.3vh;
+          }
+
+          .mobile-analytics-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.8vh;
+            font-weight: 400;
+            color: #F2F2F0;
+            line-height: 1;
+            margin: 0;
+            letter-spacing: -0.2vh;
+            border-bottom: 0.8vh solid #BDB0D9;
+          }
+
+          /* Horizontal divider bar */
+          .mobile-divider-bar {
+            width: 70vw;
+            height: 1vh;
+            background-color: #F2F2F0;
+            border-radius: 0.2vh;
+            margin: 2vh 0;
+          }
+
+          .mobile-nav {
+            display: flex;
+            gap: 8vw;
+            width: 100%;
+            justify-content: center;
+            padding-bottom: 2vh;
+          }
+
+          .mobile-nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 4vw;
+            font-weight: 600;
+            color: #F2F2F0;
+            text-decoration: none;
+            padding-bottom: 0.8vh;
+            border-bottom: 0.8vh solid transparent;
+            transition: border-bottom 0.2s ease;
+          }
+
+          .mobile-nav-link:hover {
+            border-bottom: 0.8vh solid #BDB0D9;
+          }
+
+          .mobile-nav-link:active {
+            border-bottom: 0.8vh solid #BDB0D9;
+          }
+
+          /* Mobile Simulation Area - Using Silver Ratio */
+          .mobile-simulation {
+            height: calc(100vh * var(--invphi));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+          }
+
+          /* Mobile Footer */
+          .mobile-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 4vh 8vw;
+            background: radial-gradient(
+              circle at center,
+              rgba(242, 242, 240, 1) 0%,
+              rgba(242, 242, 240, 0.9) 40%,
+              rgba(242, 242, 240, 0.6) 70%,
+              rgba(242, 242, 240, 0.3) 100%
+            );
+            z-index: 10;
+            box-sizing: border-box;
+          }
+
+          .mobile-footer-text {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 3vw;
+            font-weight: 400;
+            color: #0C0C0C;
+            line-height: 1.5;
+            text-align: center;
+            margin: 0;
+          }
+        }
+
+        /* Tablet/Desktop: 769px and above */
         @media (min-width: 769px) {
+          
+          /* ADDED THIS BLOCK TO HIDE MOBILE ELEMENTS ON DESKTOP */
+          .mobile-header,
+          .mobile-simulation,
+          .mobile-footer {
+            display: none;
+          }
+          /* END OF ADDED BLOCK */
+
           .red {
             background: #0C0C0C;
             bottom: 0;
@@ -167,6 +329,25 @@ export default function Home() {
             text-decoration: none;
           }
 
+          /* Short text versions for smaller screens */
+          .yellow-temp-text-short {
+            display: none;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: clamp(0.8rem, 0.7vw + 0.5rem, 1rem);
+            line-height: 1.5;
+            font-weight: 400;
+            color: #F2F2F0;
+            text-align: left;
+            margin: 0;
+            margin-left: 0;
+            max-width: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-width 0.4s ease, opacity 0.4s ease, margin-left 0.4s ease;
+            white-space: nowrap;
+            text-decoration: none;
+          }
+
           .blue {
             background: #0C0C0C;
             top: 0;
@@ -232,7 +413,6 @@ export default function Home() {
 
           .divider-bar {
             position: absolute;
-            /* Centered vertically within ONLY the blue/yellow band */
             top: calc((100vh * var(--comp)) * 0.15);
             left: calc(100vw * var(--invphi) - 0.23vw);
             width: 0.16vw;
@@ -244,7 +424,7 @@ export default function Home() {
           }
 
           .bottom-left-gradient {
-            position: absolute;
+            position: fixed;
             bottom: 0;
             left: 0;
             padding: 3vw;
@@ -274,43 +454,26 @@ export default function Home() {
           }
         }
 
-        @media (max-width: 768px) {
-          .page {
-            display: flex;
-            flex-direction: column;
+        /* Below 1280px: show shorter text versions */
+        @media (max-width: 1152px) and (min-width: 769px) {
+          .yellow-temp-text {
+            display: none !important;
           }
 
-          .box {
-            position: relative;
-            width: 100%;
-            flex-shrink: 0;
+          .yellow-temp-text-short {
+            display: block;
           }
 
-          .yellow { order: 1; background: yellow; flex: 1; }
-          .red    { order: 2; background: red;    flex: 4; }
-          .blue   { order: 3; background: blue;   flex: 1; }
-
-          /* Mobile: keep the paragraph readable */
-          .bottom-left-gradient {
-            position: absolute;
-            bottom: 2vh;
-            left: 2vw;
-            width: 86vw;
-            padding: 4vw;
-            background: radial-gradient(
-              circle at center,
-              rgba(242,242,240,1) 0%,
-              rgba(242,242,240,0.85) 35%,
-              rgba(242,242,240,0.4) 70%,
-              rgba(242,242,240,0) 100%
-            );
-            z-index: 5;
+          .yellow-link-wrapper:hover .yellow-temp-text-short {
+            max-width: 25vw;
+            opacity: 1;
+            margin-left: 2vw;
           }
-
-          .divider-bar { display: none; }
         }
       `}</style>
 
+      {/* --- DESKTOP-ONLY ELEMENTS --- */}
+      {/* These are hidden by the (max-width: 768px) media query */}
       <div className="box red"></div>
       <div className="box blue"></div>
       <div className="box yellow"></div>
@@ -321,7 +484,7 @@ export default function Home() {
       {/* Bottom-left paragraph with gradient */}
       <div className="bottom-left-gradient">
         <div className="bottom-left-text">
-          We are a private research firm analyzing the frontier between mathematical theory and computational design. Our work explores systemic patterns within data, forming insight and structure from disorder.
+          We are a private research firm analyzing the frontier between mathematical theory and financial systems. Our work explores systemic patterns within data, forming insight and structure from disorder.
         </div>
       </div>
 
@@ -332,17 +495,26 @@ export default function Home() {
             <a href="/about" className="yellow-temp-text">
               A brief on our origins, philosophy, and direction.
             </a>
+            <a href="/about" className="yellow-temp-text-short">
+              Our story
+            </a>
           </div>
           <div className="yellow-link-wrapper">
             <a href="/research" className="yellow-link">Research</a>
             <a href="/research" className="yellow-temp-text">
               An overview of our ongoing studies and findings.
             </a>
+            <a href="/research" className="yellow-temp-text-short">
+              Our work
+            </a>
           </div>
           <div className="yellow-link-wrapper">
             <a href="/contact" className="yellow-link">Contact</a>
             <a href="/contact" className="yellow-temp-text">
               Reach out for inquiries, collaborations, or opportunities.
+            </a>
+            <a href="/contact" className="yellow-temp-text-short">
+              Get in touch
             </a>
           </div>
         </div>
@@ -361,6 +533,42 @@ export default function Home() {
           </div>
         </a>
       </div>
+
+      {/* --- MOBILE-ONLY ELEMENTS --- */}
+      {/* These are hidden by the (min-width: 769px) media query */}
+      <div className="mobile-header">
+        <a href="/" style={{ textDecoration: "none" }}>
+          <div className="mobile-logo-section">
+            <div className="mobile-logo-container">
+              <img src="/WOA_logo_white.svg" alt="WOA Logo" />
+            </div>
+            <div className="mobile-text-container">
+              <h1 className="mobile-white-oak-text">WHITE OAK</h1>
+              <p className="mobile-analytics-text">Analysis .</p>
+            </div>
+          </div>
+        </a>
+
+        {/* Horizontal divider bar */}
+        <div className="mobile-divider-bar"></div>
+
+        <nav className="mobile-nav">
+          <a href="/about" className="mobile-nav-link">About</a>
+          <a href="/research" className="mobile-nav-link">Research</a>
+          <a href="/contact" className="mobile-nav-link">Contact</a>
+        </nav>
+      </div>
+
+      <div className="mobile-simulation">
+        {/* Particle field shows here naturally */}
+      </div>
+
+      <div className="mobile-footer">
+        <p className="mobile-footer-text">
+          We are a private research firm analyzing the frontier between mathematical theory and financial systems. Our work explores systemic patterns within data, forming insight and structure from disorder.
+        </p>
+      </div>
     </div>
   );
 }
+
